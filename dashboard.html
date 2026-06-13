@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Management Dashboard</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span class="logo-text">RestroHub</span>
+            </div>
+            <nav class="nav-menu">
+                <button class="nav-item active" data-tab="dashboard">📊 Dashboard</button>
+                <button class="nav-item" data-tab="restaurant">🏪 Restaurant</button>
+                <button class="nav-item" data-tab="timezones">🌍 Time Zones</button>
+                <button class="nav-item" data-tab="weather">🌤️ Weather</button>
+                <button class="nav-item" data-tab="tasks">✓ Tasks</button>
+                <button class="nav-item" data-tab="settings">⚙️ Settings</button>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-title">
+                    <h1 id="pageTitle">Dashboard</h1>
+                    <p id="pageSubtitle">Welcome to Restaurant Management System</p>
+                </div>
+                <div class="header-actions">
+                    <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                    <div class="user-profile">
+                        <img src="https://via.placeholder.com/40" alt="Profile" class="profile-pic">
+                        <span class="user-name">Manager</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard Tab -->
+                <section id="dashboard-content" class="tab-content active">
+                    <div class="dashboard-grid">
+                        <!-- Quick Stats -->
+                        <div class="stats-section">
+                            <h2>Quick Stats</h2>
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <div class="stat-icon">📅</div>
+                                    <div class="stat-info">
+                                        <div class="stat-label">Today's Reservations</div>
+                                        <div class="stat-value" id="todayReservations">0</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">👥</div>
+                                    <div class="stat-info">
+                                        <div class="stat-label">Guests Expected</div>
+                                        <div class="stat-value" id="totalGuests">0</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">✓</div>
+                                    <div class="stat-info">
+                                        <div class="stat-label">Tasks Today</div>
+                                        <div class="stat-value" id="tasksToday">0</div>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">🌡️</div>
+                                    <div class="stat-info">
+                                        <div class="stat-label">Current Temp</div>
+                                        <div class="stat-value" id="currentTemp">--°</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Access -->
+                        <div class="quick-access">
+                            <h2>Quick Access</h2>
+                            <div class="quick-buttons">
+                                <button class="quick-btn" onclick="switchTab('restaurant')">
+                                    <span>📍</span>
+                                    <span>Restaurant Info</span>
+                                </button>
+                                <button class="quick-btn" onclick="switchTab('tasks')">
+                                    <span>📝</span>
+                                    <span>Add Task</span>
+                                </button>
+                                <button class="quick-btn" onclick="switchTab('weather')">
+                                    <span>🌤️</span>
+                                    <span>Check Weather</span>
+                                </button>
+                                <button class="quick-btn" onclick="switchTab('timezones')">
+                                    <span>🕐</span>
+                                    <span>Time Zones</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Recent Tasks -->
+                        <div class="recent-section">
+                            <h2>Recent Tasks</h2>
+                            <div id="recentTasksList" class="tasks-list">
+                                <p class="empty-message">No tasks yet. Add one to get started!</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Restaurant Tab -->
+                <section id="restaurant-content" class="tab-content">
+                    <div class="restaurant-section">
+                        <div class="restaurant-header">
+                            <h2>🍽️ The Golden Fork</h2>
+                            <p>Premium Fine Dining Restaurant</p>
+                        </div>
+
+                        <div class="restaurant-grid">
+                            <div class="info-card">
+                                <h3>📍 Location</h3>
+                                <p>123 Culinary Street</p>
+                                <p>Gourmet City, GC 12345</p>
+                            </div>
+
+                            <div class="info-card">
+                                <h3>📞 Contact</h3>
+                                <p><strong>Phone:</strong> (555) 123-4567</p>
+                                <p><strong>Email:</strong> info@goldenfork.com</p>
+                            </div>
+
+                            <div class="info-card">
+                                <h3>🕐 Hours</h3>
+                                <p>Mon-Thu: 5PM - 11PM</p>
+                                <p>Fri-Sat: 5PM - 12AM</p>
+                                <p>Sun: Closed</p>
+                            </div>
+
+                            <div class="info-card">
+                                <h3>⭐ About</h3>
+                                <p>Award-winning fine dining since 2010. Experience culinary excellence with our expert chefs.</p>
+                            </div>
+                        </div>
+
+                        <div class="menu-preview">
+                            <h3>Sample Menu</h3>
+                            <div class="menu-grid">
+                                <div class="menu-item">
+                                    <h4>Pan-Seared Salmon</h4>
+                                    <p>$28</p>
+                                </div>
+                                <div class="menu-item">
+                                    <h4>Wagyu Beef Ribeye</h4>
+                                    <p>$45</p>
+                                </div>
+                                <div class="menu-item">
+                                    <h4>Duck Confit</h4>
+                                    <p>$32</p>
+                                </div>
+                                <div class="menu-item">
+                                    <h4>Chocolate Soufflé</h4>
+                                    <p>$8</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Time Zones Tab -->
+                <section id="timezones-content" class="tab-content">
+                    <div class="timezones-section">
+                        <h2>🌍 Global Time Zones</h2>
+                        <input type="text" id="tzSearch" placeholder="Search time zones..." class="search-input">
+                        <div id="timezonesGrid" class="timezones-grid">
+                            <!-- Time zone cards will be generated here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Weather Tab -->
+                <section id="weather-content" class="tab-content">
+                    <div class="weather-section">
+                        <h2>🌤️ Weather Dashboard</h2>
+                        <div class="weather-search">
+                            <input type="text" id="weatherSearch" placeholder="Search city..." class="search-input">
+                            <button id="weatherBtn" class="btn-primary">Search</button>
+                            <button id="locationWeatherBtn" class="btn-secondary" title="Use my location">📍</button>
+                        </div>
+                        <div id="weatherContent" class="weather-display">
+                            <p class="empty-message">Enter a city to view weather</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Tasks Tab -->
+                <section id="tasks-content" class="tab-content">
+                    <div class="tasks-section">
+                        <h2>✓ Task Manager</h2>
+                        <div class="task-input-section">
+                            <input type="text" id="taskInput" placeholder="Add a new task..." class="search-input">
+                            <select id="taskCategory" class="task-select">
+                                <option value="Work">Work</option>
+                                <option value="Important">Important</option>
+                                <option value="Urgent">Urgent</option>
+                                <option value="Maintenance">Maintenance</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <button id="addTaskBtn" class="btn-primary">Add Task</button>
+                        </div>
+
+                        <div class="tasks-filter">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="pending">Pending</button>
+                            <button class="filter-btn" data-filter="completed">Completed</button>
+                        </div>
+
+                        <div id="tasksList" class="tasks-list">
+                            <p class="empty-message">No tasks. Add one to get started!</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Settings Tab -->
+                <section id="settings-content" class="tab-content">
+                    <div class="settings-section">
+                        <h2>⚙️ Settings</h2>
+                        <div class="settings-grid">
+                            <div class="setting-card">
+                                <h3>🎨 Theme</h3>
+                                <div class="setting-options">
+                                    <label>
+                                        <input type="radio" name="theme" value="light">
+                                        Light
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="theme" value="dark" checked>
+                                        Dark
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="theme" value="auto">
+                                        Auto
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="setting-card">
+                                <h3>🔔 Notifications</h3>
+                                <label class="toggle-label">
+                                    <input type="checkbox" id="notificationsToggle" checked>
+                                    <span class="toggle-switch"></span>
+                                    Enable Notifications
+                                </label>
+                            </div>
+
+                            <div class="setting-card">
+                                <h3>💾 Data</h3>
+                                <button class="btn-secondary" onclick="exportData()">Export Data</button>
+                                <button class="btn-secondary" onclick="clearData()">Clear All Data</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>
