@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="weather-styles.css">
+</head>
+<body>
+    <div class="weather-container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🌤️ Weather Dashboard</h1>
+            <p>Real-time Weather Information</p>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-wrapper">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search city or location..." 
+                    class="search-input"
+                >
+                <button id="searchBtn" class="search-btn">🔍 Search</button>
+                <button id="locationBtn" class="location-btn" title="Use current location">📍</button>
+            </div>
+            <div id="errorMessage" class="error-message"></div>
+        </div>
+
+        <!-- Current Weather -->
+        <section id="currentWeather" class="current-weather hidden">
+            <div class="weather-main">
+                <div class="location-info">
+                    <h2 id="cityName">--</h2>
+                    <p id="dateTime">--</p>
+                </div>
+                <div class="temperature-section">
+                    <img id="weatherIcon" src="" alt="Weather" class="weather-icon">
+                    <div class="temp-info">
+                        <div id="temperature" class="temperature">--°</div>
+                        <div id="weatherDesc" class="weather-description">--</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="detail-label">💨 Wind Speed</span>
+                    <span id="windSpeed" class="detail-value">-- km/h</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">💧 Humidity</span>
+                    <span id="humidity" class="detail-value">--%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">🌡️ Feels Like</span>
+                    <span id="feelsLike" class="detail-value">--°C</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">🔽 Pressure</span>
+                    <span id="pressure" class="detail-value">-- mb</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">👁️ Visibility</span>
+                    <span id="visibility" class="detail-value">-- km</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">☁️ Cloudiness</span>
+                    <span id="clouds" class="detail-value">--%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Forecast Section -->
+        <section id="forecastSection" class="forecast-section hidden">
+            <h3>📅 5-Day Forecast</h3>
+            <div id="forecastContainer" class="forecast-container">
+                <!-- Forecast cards will be inserted here -->
+            </div>
+        </section>
+
+        <!-- Hourly Forecast -->
+        <section id="hourlySection" class="hourly-section hidden">
+            <h3>⏰ Hourly Forecast</h3>
+            <div id="hourlyContainer" class="hourly-container">
+                <!-- Hourly data will be inserted here -->
+            </div>
+        </section>
+
+        <!-- Loading Spinner -->
+        <div id="loadingSpinner" class="loading-spinner hidden">
+            <div class="spinner"></div>
+            <p>Loading weather data...</p>
+        </div>
+
+        <!-- Recent Searches -->
+        <section id="recentSearches" class="recent-searches">
+            <h3>🕐 Recent Searches</h3>
+            <div id="recentList" class="recent-list">
+                <!-- Recent searches will appear here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="weather-script.js"></script>
+</body>
+</html>
