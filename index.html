@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Golden Fork - Fine Dining Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">🍽️ The Golden Fork</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reservations">Reservations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>The Golden Fork</h1>
+            <p>Experience Culinary Excellence</p>
+            <a href="#reservations" class="btn btn-primary">Reserve a Table</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Welcome to The Golden Fork, where tradition meets innovation. Since 2010, we've been serving the finest cuisine crafted with passion and the freshest ingredients. Our expert chefs combine classical techniques with modern creativity to deliver an unforgettable dining experience.</p>
+            <div class="about-features">
+                <div class="feature">
+                    <h3>🎯 Quality</h3>
+                    <p>Premium ingredients from trusted local suppliers</p>
+                </div>
+                <div class="feature">
+                    <h3>👨‍🍳 Expertise</h3>
+                    <p>Award-winning chefs with 20+ years experience</p>
+                </div>
+                <div class="feature">
+                    <h3>🌟 Excellence</h3>
+                    <p>Five-star service and unforgettable ambiance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>Our Menu</h2>
+            <div class="menu-categories">
+                <div class="menu-category">
+                    <h3>Appetizers</h3>
+                    <div class="menu-item">
+                        <h4>Grilled Shrimp Skewers</h4>
+                        <p>Fresh shrimp with garlic butter and herbs - $12</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Foie Gras Terrine</h4>
+                        <p>Silky smooth with fig compote - $18</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Burrata & Heirloom Tomato</h4>
+                        <p>Fresh burrata with basil oil - $14</p>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Main Courses</h3>
+                    <div class="menu-item">
+                        <h4>Pan-Seared Salmon</h4>
+                        <p>With asparagus and lemon beurre blanc - $28</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Wagyu Beef Ribeye</h4>
+                        <p>32oz dry-aged, served with truffle mash - $45</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Duck Confit</h4>
+                        <p>Tender duck leg with cherry gastrique - $32</p>
+                    </div>
+                </div>
+
+                <div class="menu-category">
+                    <h3>Desserts</h3>
+                    <div class="menu-item">
+                        <h4>Chocolate Soufflé</h4>
+                        <p>Warm chocolate with vanilla ice cream - $8</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Crème Brûlée</h4>
+                        <p>Classic vanilla with caramelized sugar - $7</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Fresh Fruit Tart</h4>
+                        <p>Seasonal fruits with pastry cream - $9</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🍽️</div>
+                    <p>Fine Dining Ambiance</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">👨‍🍳</div>
+                    <p>Chef's Kitchen</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🥩</div>
+                    <p>Signature Dishes</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🍷</div>
+                    <p>Wine Collection</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">🎉</div>
+                    <p>Private Events</p>
+                </div>
+                <div class="gallery-item">
+                    <div class="gallery-placeholder">✨</div>
+                    <p>Elegant Setting</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservations Section -->
+    <section id="reservations" class="reservations">
+        <div class="container">
+            <h2>Make a Reservation</h2>
+            <form class="reservation-form" onsubmit="handleReservation(event)">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time *</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="guests">Number of Guests *</label>
+                        <input type="number" id="guests" name="guests" min="1" max="12" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="occasion">Occasion</label>
+                        <select id="occasion" name="occasion">
+                            <option>Regular Dining</option>
+                            <option>Birthday</option>
+                            <option>Anniversary</option>
+                            <option>Business Meeting</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="requests">Special Requests</label>
+                    <textarea id="requests" name="requests" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Reserve Now</button>
+            </form>
+            <div id="reservation-message" class="reservation-message"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>📍 Location</h3>
+                    <p>123 Culinary Street<br>Gourmet City, GC 12345</p>
+                </div>
+                <div class="contact-item">
+                    <h3>📞 Phone</h3>
+                    <p>(555) 123-4567</p>
+                </div>
+                <div class="contact-item">
+                    <h3>✉️ Email</h3>
+                    <p>info@goldenfork.com</p>
+                </div>
+                <div class="contact-item">
+                    <h3>🕐 Hours</h3>
+                    <p>Mon-Thu: 5PM - 11PM<br>Fri-Sat: 5PM - 12AM<br>Sun: Closed</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 The Golden Fork. All rights reserved. | Crafted with ❤️</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
